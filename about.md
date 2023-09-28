@@ -5,7 +5,8 @@ permalink: /about/
 ---
 ## JunHoo Lee, Ph.D. Candidate
 
-![Profile Picture](/path-to-your-photo.jpg)
+<!-- ![Profile Picture](./science_vessel.jpeg) -->
+<img src="./science_vessel.jpeg" width="300"/>
 
 I am a Ph.D. Candidate at the Department of Intelligence and Information, Seoul National University, specializing in the dynamics of deep learning. My journey in the realm of Computer Science started at the Department of Electrical and Computer Engineering, Seoul National University, and has been filled with explorations, discoveries, and learning, revolving around the intricate realms of Artificial Intelligence and Deep Learning.
 
