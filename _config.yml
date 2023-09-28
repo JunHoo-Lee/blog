@@ -13,7 +13,7 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: "JunHoo Lee, Ph.D. Candidate"
+title: "JunHoo Lee"
 email: 'mrjunoo@snu.ac.kr'
 description: "Exploring the Dynamics of Deep Learning at Seoul National University."
 baseurl: "" # the subpath of your site, e.g. /blog
@@ -94,7 +94,7 @@ pagination:
 footer_text: '✎ 2023 JunHoo Lee'
 admin_name: 'JunHoo Lee'
 google_analytics: "G-7MXV97PZLK" # Update with your own tracking ID
-enable_contact: true
+enable_contact: false
 
 #### Phantom Navigation menu
 enable_nav: true
