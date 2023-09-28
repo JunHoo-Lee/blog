@@ -96,6 +96,7 @@ admin_name: 'JunHoo Lee'
 google_analytics: "G-7MXV97PZLK" # Update with your own tracking ID
 enable_contact: false
 
+
 #### Phantom Navigation menu
 enable_nav: true
 nav_item:
