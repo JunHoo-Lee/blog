@@ -23,8 +23,14 @@ I am a Ph.D. Candidate at the Department of Intelligence and Information, Seoul 
 - B.Sc. in Electrical and Computer Engineering, Seoul National University, Mar 2017 - Sep 2021
 
 ## Publications
-- **SHOT: Suppressing the Hessian along the Optimization Trajectory for Gradient-Based Meta-Learning**, Presented as a Poster at NeurIPS, 2023. [OpenReview](http://www.openreview.net)
-- **Any-Way Meta Learning**, 2023, Currently Under Review. 
+- **SHOT: Suppressing the Hessian along the Optimization Trajectory for Gradient-Based Meta-Learning**  
+  **JunHoo Lee**, JaYeon Yoo, NoJun Kwak  
+  Presented as a Poster at NeurIPS, 2023. [OpenReview](http://www.openreview.net)
+
+- **Any-Way Meta Learning**  
+  **JunHoo Lee**, YeRim Kim, HyunHo Lee, NoJun Kwak  
+  2023, Currently Under Review.
+
 
 
 ## Awards and Scholarships
