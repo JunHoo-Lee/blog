@@ -7,7 +7,7 @@ permalink: /about/
 
 <!-- ![Profile Picture](./science_vessel.jpeg) -->
 <div style="display: flex; align-items: center;">
-  <img src="./science_vessel.jpeg" alt="Science Vessel" style="width: 170px; margin-right: 50px;"/>
+  <img src="/science_vessel.jpeg" alt="Science Vessel" style="width: 170px; margin-right: 50px;"/>
   <p>
   I am a Ph.D. Candidate at the Department of Intelligence and Information, Seoul National University, with a specialization in the dynamics of deep learning. My in-depth research primarily revolves around dissecting and understanding the intricate dynamics that arise in overparameterized states of deep learning models. I hold a deep fascination for employing mathematical frameworks to probe into the essence and nuances of learning algorithms, with the ambition to decipher the underlying principles and properties that dictate the behavior of deep learning models. Beyond my academic endeavors, I'm immersed in meditation and playing the piano.
 
