@@ -6,11 +6,12 @@ permalink: /about/
 ## JunHoo Lee, Ph.D. Candidate
 
 <!-- ![Profile Picture](./science_vessel.jpeg) -->
-<p align="center">
-<img src="/science_vessel.jpeg" width="300"/>
-</p>
-
-I am a Ph.D. Candidate at the Department of Intelligence and Information, Seoul National University, specializing in the dynamics of deep learning. My journey in the realm of Computer Science started at the Department of Electrical and Computer Engineering, Seoul National University, and has been filled with explorations, discoveries, and learning, revolving around the intricate realms of Artificial Intelligence and Deep Learning.
+<div style="display: flex; align-items: center;">
+  <img src="./science_vessel.jpeg" alt="Science Vessel" style="width: 300px; margin-right: 20px;"/>
+  <p>
+  I am a Ph.D. Candidate at the Department of Intelligence and Information, Seoul National University, specializing in the dynamics of deep learning. My journey in the realm of Computer Science started at the Department of Electrical and Computer Engineering, Seoul National University, and has been filled with explorations, discoveries, and learning, revolving around the intricate realms of Artificial Intelligence and Deep Learning.
+  </p>
+</div>
 
 ## Contact
 - Email: mrjunoo@snu.ac.kr
@@ -30,8 +31,3 @@ I am a Ph.D. Candidate at the Department of Intelligence and Information, Seoul 
 - 3rd Place, 2021 SNU FastMRI Challenge (among 107 teams)
 - Scholarship from Kwanak Corporation, 2021
 - National Scholarship for Science and Engineering, 2017
-
-## Hobbies
-- Reading
-- Hiking
-- Photography
