@@ -15,10 +15,10 @@ I am J H LEE,  Ph.D. Candidate at the Department of Intelligence and Information
 
 ### Publications
 
-- SHOT: Suppressing the Hessian along the Optimization Trajectory for Gradient-Based Meta-Learning.  ***JunHoo Lee***, *JaYeon Yoo*, *NoJun Kwak*.  NeurIPS, 2023.
+- SHOT: Suppressing the Hessian along the Optimization Trajectory for Gradient-Based Meta-Learning <br> ***JunHoo Lee***, *JaYeon Yoo*, *NoJun Kwak*.  NeurIPS, 2023.
 <!-- -  [OpenReview](http://www.openreview.net) -->
 
-- Any-Way Meta Learning ***JunHoo Lee***, *YeRim Kim*, *HyunHo Lee*, *NoJun Kwak*.  2023, Currently Under Review.
+- Any-Way Meta Learning <br> ***JunHoo Lee***, *YeRim Kim*, *HyunHo Lee*, *NoJun Kwak*.  2023, Currently Under Review.
 
 <!-- - LinkedIn: [linkedin.com/in/junhoolee](#) -->
 <!-- - Twitter: [@JunHooLee](#) -->
