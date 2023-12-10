@@ -8,10 +8,10 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <meta property="og:image" content="https://junhoo-lee.com/mixnerf/img/mixnerf_titlecard.png">
+    <!-- <meta property="og:image" content="https://junhoo-lee.com/mixnerf/img/mixnerf_titlecard.png">
     <meta property="og:image:type" content="image/png">
-    <meta property="og:image:width" content="1783">
-    <meta property="og:image:height" content="1619">
+    <meta property="og:image:width" content="1783"> -->
+    <!-- <meta property="og:image:height" content="1619"> -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://junhoo-lee.com/mixnerf">
     <meta property="og:title" content="SHOT: Suppressing the Hessian along the Optimization Trajectory for Gradient-Based Meta-Learning">
@@ -41,9 +41,9 @@
     <div class="container" id="header" style="text-align: center; margin: auto;">
         <div class="row" id="title-row" style="max-width: 100%; margin: 0 auto; display: inline-block">
             <h2 class="col-md-12 text-center" id="title">
-                <b>MixNeRF</b>: Modeling a Ray with Mixture Density <br> for Novel View Synthesis from Sparse Inputs<br>
+                <b>SHOT</b>: Suppressing the Hessian along the Optimization Trajectory for Gradient-Based Meta-Learning
                 <small>
-                    CVPR 2023 (Qualcomm Innovation Fellowship Korea 2023 Winner)
+                    NeurIPS 2023
                 </small>
             </h2>
         </div>
@@ -87,7 +87,7 @@
                             </a>
                         </li>
                        <li>
-                           <a href="https://www.youtube.com/watch?v=pNB3e2GyEDw">
+                           <a href="https://youtu.be/pNB3e2GyEDw?si=OnzVkKhxzvK4RTuv">
                            <img src="./img/youtube_icon.png" height="60px">
                                <h4><strong>Video</strong></h4>
                            </a>
@@ -145,7 +145,7 @@
                </h3>
                <div class="text-center">
                    <div style="position:relative;padding-top:56.25%;">
-                       <iframe src="https://www.youtube.com/watch?v=pNB3e2GyEDw" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+                       <iframe src="https://youtu.be/pNB3e2GyEDw?si=OnzVkKhxzvK4RTuv" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
                    </div>
                </div>
            </div>
@@ -197,6 +197,7 @@
                 <div class="text-justify">
                     At the start of each inner loop in GBML, the model is functionally equivalent to a random initialization point, as <i>it has no prior knowledge of the new episode.</i> This initiates a learning trajectory similar to conventional deep learning, but with a critical distinction: GBML achieves this task-specific adaptation in typically fewer than three optimization steps, in contrast to the potentially countless steps in standard deep learning settings. GBML necessitates huge movements per step due to the constraint of very few optimization steps for task adaptation. This means <i>the Hessian is dominant</i> in the optimization, while in SGD it does not consider the Hessian.
                     <br>
+                    <br>
                     <b>Our hypothesis: GBML suppresses the Hessian along the inner loop.</b>
                 </div>
                 <div class="text-center">
@@ -205,45 +206,7 @@
                 <br>
                 <div class="text-justify">
                     The equation above is the condition where the loss decreases. As SGD does not consider the Hessian, it becomes noise in the equation. However, in GBML, the Hessian is dominant in the inner loop as it moves a lot in a few steps.
-                </div>
-                <br>
-                <div class="text-center">
-                    <img src="./img/raydepth_2.png" width="50%">
-                </div>
-                <br>
-                <div class="text-justify">
-                    Finally, we model the color values along a ray based on the new mixing coefficients and the corresponding pdf is as follows:
-                </div>
-                <br>
-                <div class="text-center">
-                    <img src="./img/raydepth_3.png" width="50%">
-                </div>
-                <br>
-                <div class="text-justify">
-                    Since the estimated ray depths are likely to be close enough to those of the ground truths, we use the same GT color values of input rays for modeling the mixture distribution based on the newly generated mixing coefficients.
-                    It further improves the robustness for shift of colors and ray viewpoints by simply modeling a ray once again with regenerated blending weights, eliminating pre-generation and extra inference of unseen views without much computational overhead.
-                </div>
-<!--                <div class="text-center">-->
-<!--                    <video id="refdir" width="40%" playsinline autoplay loop muted>-->
-<!--                        <source src="video/reflection_animation.mp4" type="video/mp4" />-->
-<!--                    </video>-->
-<!--                </div>-->
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <h3>
-                    Benefit of Mixture Density Model
-                </h3>
-                <div class="text-center">
-                    <img src="./img/weight_dist.png" width="100%">
-                </div>
-                <div class="text-justify">
-                    For the unimodal distribution in blue, mip-NeRF does not estimate the mode well and achieves degenerate geometry.
-                    However, RegNeRF and our MixNeRF show the unimodal weight distributions leading to higher-quality novel views, and especially our MixNeRF achieves the distribution with sharper mode than RegNeRF, which is more similar to that of mip-NeRF (All-view).
-                    In case of the bimodal-shaped distribution in red, our MixNeRF estimates the weight distribution successfully while both mip-NeRF and RegNeRF fail to estimate the accurate modes.
-                    Since the predicted 3D geometry is directly correlated with how well the density is estimated, our MixNeRF is able to learn the geometry more efficiently with limited input views through mixture density modeling.
+                    From this perspective, we can deduce the conclusion that every successful GBML model should have a small Hessian size along the inner loop. And we hypothesize that this is what outer loop implicitly does.
                 </div>
             </div>
         </div>
@@ -251,31 +214,31 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <h3>
-                    Depth Map Estimation
-                </h3>
-                <div class="video-compare-container" id="materialsDiv">
-                    <video class="video" id="depth" loop playsinline autoPlay muted src="video/depth_regnerf_ours.mp4" onplay="resizeAndPlay(this)"></video>
-                    <canvas height=0 class="videoMerge" id="depthMerge"></canvas>
-                </div>
-                <div class="text-justify">
-                    We observe that RegNeRF fails to learn the geometry with its smoothing strategy and achieves degenerate results due to the overly strong prior of depth smoothness.
-                    However, since our MixNeRF learns the depth of a ray by leveraging a mixture density model without smoothing from additional unseen rays, the depth maps are predicted much more efficiently and precisely.
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <h3>
-                    Efficiency in Training and Inference
+                    SHOT: Suppressing the Hessian along the Optimization Trajectory
                 </h3>
                 <div class="text-center">
-                    <img src="./img/efficiency_1.png" width="75%">
+                    <img src="./img/SHOT_algorithm.png" width="100%">
                 </div>
                 <div class="text-justify">
-                    Although it takes a similar amount of time to train DietNeRF as MixNeRF, its performance is inferior significantly to ours in 3 and 6-view scenario.
-                    Compared to RegNeRF, ours outperforms it with about 42% shorter training time per scene under the same number of input view scenario, resulting from the elimination of extra inference for additional unseen rays.
+                    Then our goal naturally becomes to explicitly suppress the Hessian along the inner loop. However, 
+                    directly suppressing the Hessian is not favorable as it is computationally expensive. We solve this 
+                    problem by observing that <b> the Hessian along the optimization trajectory</b> matters, not the Hessian itself.
+                    Which means, we only need the Hessian in the direction of the optimization trajectory, which can be reduced in first order.
+                    To do so, we provide ad-hoc measure. From the perspective of gradient flow, the model is less influenced by the Hessian
+                    if it embodies more gradient steps and smaller learning rate. Therefore, minimizing the distance between the more-Hessian-influenced model
+                    and less-Hessian-influenced model can be a measure the distortion by the Hessian. We call this measure as <b>SHOT</b>.
+                    Then, the measure becomes a simple distance between the target and reference models.
                 </div>
+                <div class="text-center">
+                    <img src="./img/SHOT_Loss.png" width="100%">
+                </div>
+                <div class="text-justify">
+                    And detailed pseudo code is as follows.
+                </div>
+                <div class="text-center">
+                    <img src="./img/SHOT_algorithm_text.png" width="100%">
+                </div>
+
             </div>
         </div>
 
@@ -284,64 +247,12 @@
                 <h3>
                     Results
                 </h3>
-                <h4>
-                    DTU 3-view
-                </h4>
-                <table width="100%">
-                    <tr>
-                        <td align="left" valign="top" width="33%">
-                            <video id="dtu1" width="100%" playsinline autoplay loop muted>
-                                <source src="video/results_dtu_1.mp4" type="video/mp4" />
-                            </video>
-                        </td>
-                        <td align="left" valign="top" width="33%">
-                            <video id="dtu2" width="100%" playsinline autoplay loop muted>
-                                <source src="video/results_dtu_2.mp4" type="video/mp4" />
-                            </video>
-                        </td>
-                        <td align="left" valign="top" width="33%">
-                            <video id="dtu3" width="100%" playsinline autoplay loop muted>
-                                <source src="video/results_dtu_3.mp4" type="video/mp4" />
-                            </video>
-                        </td>
-                    </tr>
-                </table>
-                <br>
-                <h4>
-                    LLFF 3-view
-                </h4>
-                <table width="100%">
-                    <tr>
-                        <td align="left" valign="top" width="50%">
-                            <video id="llff1" width="100%" playsinline autoplay loop muted>
-                                <source src="video/results_llff_1.mp4" type="video/mp4" />
-                            </video>
-                        </td>
-                        <td align="left" valign="top" width="50%">
-                            <video id="llff2" width="100%" playsinline autoplay loop muted>
-                                <source src="video/results_llff_2.mp4" type="video/mp4" />
-                            </video>
-                        </td>
-                    </tr>
-                </table>
-                <br>
-                <h4>
-                    Blender 4-view
-                </h4>
-                <table width="100%">
-                    <tr>
-                        <td align="left" valign="top" width="50%">
-                            <video id="blender1" width="100%" playsinline autoplay loop muted>
-                                <source src="video/results_blender_1.mp4" type="video/mp4" />
-                            </video>
-                        </td>
-                        <td align="left" valign="top" width="50%">
-                            <video id="blender2" width="100%" playsinline autoplay loop muted>
-                                <source src="video/results_blender_2.mp4" type="video/mp4" />
-                            </video>
-                        </td>
-                    </tr>
-                </table>
+                <div class="text-justify">
+                    Following results show that SHOT behaves as we expected.
+                </div>
+                <div class="text-center">
+                    <img src="./img/landscape.png" width="50%">
+                </div>
             </div>
         </div>
 
@@ -358,8 +269,7 @@
     booktitle = {Proceedings of the NeurIPS 2023},
     month     = {December},
     year      = {2023},
-    <!-- pages     = {20659-20668} -->
-}</textarea>
+    }</textarea>
                 </div>
             </div>
         </div>
