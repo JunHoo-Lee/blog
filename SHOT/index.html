@@ -3,7 +3,7 @@
     
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <title>MixNeRF</title>
+    <title>SHOT</title>
 
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,13 +13,13 @@
     <meta property="og:image:width" content="1783"> -->
     <!-- <meta property="og:image:height" content="1619"> -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://junhoo-lee.com/mixnerf">
+    <meta property="og:url" content="https://junhoo-lee.com/SHOT">
     <meta property="og:title" content="SHOT: Suppressing the Hessian along the Optimization Trajectory for Gradient-Based Meta-Learning">
     <meta property="og:description" content="In this paper, we hypothesize that gradient-based meta-learning (GBML) implicitly suppresses the Hessian along the optimization trajectory in the inner loop. Based on this hypothesis, we introduce an algorithm called SHOT (Suppressing the Hessian along the Optimization Trajectory) that minimizes the distance between the parameters of the target and reference models to suppress the Hessian in the inner loop. Despite dealing with high-order terms, SHOT does not increase the computational complexity of the baseline model much. It is agnostic to both the algorithm and architecture used in GBML, making it highly versatile and applicable to any GBML baseline. To validate the effectiveness of SHOT, we conduct empirical tests on standard few-shot learning tasks and qualitatively analyze its dynamics. We confirm our hypothesis empirically and demonstrate that SHOT outperforms the corresponding baseline. ">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="SHOT: Suppressing the Hessian along the Optimization Trajectory for Gradient-Based Meta-Learning">
     <meta name="twitter:description" content="In this paper, we hypothesize that gradient-based meta-learning (GBML) implicitly suppresses the Hessian along the optimization trajectory in the inner loop. Based on this hypothesis, we introduce an algorithm called SHOT (Suppressing the Hessian along the Optimization Trajectory) that minimizes the distance between the parameters of the target and reference models to suppress the Hessian in the inner loop. Despite dealing with high-order terms, SHOT does not increase the computational complexity of the baseline model much. It is agnostic to both the algorithm and architecture used in GBML, making it highly versatile and applicable to any GBML baseline. To validate the effectiveness of SHOT, we conduct empirical tests on standard few-shot learning tasks and qualitatively analyze its dynamics. We confirm our hypothesis empirically and demonstrate that SHOT outperforms the corresponding baseline. ">
-    <meta name="twitter:image" content="https://junhoo-lee.com/mixnerf/img/mixnerf_titlecard.png">
+    <!-- <meta name="twitter:image" content="https://junhoo-lee.com/SHOT/img/SHOT_titlecard.png"> -->
 
 
     <!-- mirror: F0%9F%AA%9E&lt -->
@@ -42,6 +42,7 @@
         <div class="row" id="title-row" style="max-width: 100%; margin: 0 auto; display: inline-block">
             <h2 class="col-md-12 text-center" id="title">
                 <b>SHOT</b>: Suppressing the Hessian along the Optimization Trajectory for Gradient-Based Meta-Learning
+                <br>
                 <small>
                     NeurIPS 2023
                 </small>
@@ -230,7 +231,7 @@
                     Then, the measure becomes a simple distance between the target and reference models.
                 </div>
                 <div class="text-center">
-                    <img src="./img/SHOT_Loss.png" width="100%">
+                    <img src="./img/SHOT_Loss.png" width="10%">
                 </div>
                 <div class="text-justify">
                     And detailed pseudo code is as follows.
@@ -251,8 +252,26 @@
                     Following results show that SHOT behaves as we expected.
                 </div>
                 <div class="text-center">
-                    <img src="./img/landscape.png" width="50%">
+                    <img src="./img/landscape.png" width="70%">
                 </div>
+                <div class="text-center">
+                    <img src="./img/SHOT-Init.png" width="80%">
+                </div>
+                We trained the model with only SHOT loss. Which means, we did not use any target loss which aims to achieve meta-learning ability.
+                As you can see, the randomly-initizlized model fails to learn the task. It is no better than random guess. However, SHOT-initialized model
+                can perform better than random guess. The landscape explains why. The loss surface along the gradient direction is flat when we initialize 
+                model with SHOT. Therefore, we can guarentee that the loss decreases along the gradient direction.
+                <div class="text-center">
+                    <img src="./img/Shot-Indomain.png" width="80%">
+                </div>
+                <div class="text-center">
+                    <img src="./img/SHOT-CrossDomain.png" width="80%">
+                </div>
+                <div class="text-center">
+                    <img src="./img/SHOT-variousdistance.png" width="80%">
+                </div>
+                Table above shows that SHOT can boost performance of various benchmarks, in-domain and cross-domain.
+                Also, we can adopt any measure to compute the distance between the target and reference models.
             </div>
         </div>
 
