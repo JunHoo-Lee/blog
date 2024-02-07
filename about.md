@@ -19,7 +19,7 @@ permalink: /about/
 - SHOT: Suppressing the Hessian along the Optimization Trajectory for Gradient-Based Meta-Learning  
   ***JunHoo Lee***, *JaYeon Yoo*, *NoJun Kwak*.  *NeurIPS*, *2023*. [Poster](https://neurips.cc/virtual/2023/poster/71763)
 - Any-Way Meta Learning  
-  ***JunHoo Lee***, *YeRim Kim*, *HyunHo Lee*, *NoJun Kwak*.  *2023*, *Currently Under Review*
+  ***JunHoo Lee***, *YeRim Kim*, *HyunHo Lee*, *NoJun Kwak*.  *2023*, *Currently Under Review* [arXiv](https://arxiv.org/abs/2401.05097)
 
 <!-- - LinkedIn: [linkedin.com/in/junhoolee](#) -->
 <!-- - Twitter: [@JunHooLee](#) -->
@@ -34,9 +34,11 @@ permalink: /about/
 - Dataset Condensation
 - Meta Learning
 - Deep Learning Theory
+- Responsible AI
 
 ### Awards and Scholarships
 
+- BK Future Innovation Talent Scholarship, 2024 
 - 3rd Place, 2021 SNU FastMRI Challenge (₩2.5M prize, 107 teams)
 - Scholarship from Kwanak Corporation, 2021
 - National Scholarship for Science and Engineering, 2017
